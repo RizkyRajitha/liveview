@@ -1,0 +1,3 @@
+<h1> Todo </h1>
+
+<%= live_render(@conn , LiveViewTodos.TodoLive) %>
