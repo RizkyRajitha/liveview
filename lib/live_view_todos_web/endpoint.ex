@@ -15,7 +15,9 @@ defmodule LiveViewTodosWeb.Endpoint do
     websocket: true,
     longpoll: false
 
-    socket "/live",websocket: [timeout: 45_000], Phoenix.LiveView.Socket , websocket:  [connection_info: [session: @session_options]]
+    socket "/live",  Phoenix.LiveView.Socket , 
+    websocket: [timeout: 45_000],
+    websocket:  [connection_info: [session: @session_options]]
 
 
   # Serve at "/" the static files from "priv/static" directory.

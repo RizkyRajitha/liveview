@@ -3,12 +3,14 @@ use Mix.Config
 # Configure your database
 config :live_view_todos, LiveViewTodos.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "123",
-  database: "ecto_todo",
-  hostname: "192.168.99.100",
-  show_sensitive_data_on_connection_error: true,
-  pool_size: 10
+  # username: "postgres",
+  # password: "aWLLyy8qHx7JorWgfbWUQ7SGzReOqP9J",
+  # database: "keagzkuy",
+  url: "postgres://keagzkuy:aWLLyy8qHx7JorWgfbWUQ7SGzReOqP9J@drona.db.elephantsql.com:5432/keagzkuy",
+  # hostname: "192.168.99.100",
+  # show_sensitive_data_on_connection_error: true,
+  ssl: true,
+  pool_size: 3
 
 # For development, we disable any cache and enable
 # debugging and code reloading.
