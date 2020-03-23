@@ -37,8 +37,8 @@ defmodule LiveViewTodos.TodoLive do
 
     def handle_event("delete",  %{"id" => todoid} , socket)  do
         # IO.puts todo
-            # uptodo =  Todos.get_todo!(todoid)
-            Todos.delete_todo(todoid)
+            uptodo =  Todos.get_todo!(todoid)
+            Todos.delete_todo(uptodo)
             {:noreply, socket}
         end
 

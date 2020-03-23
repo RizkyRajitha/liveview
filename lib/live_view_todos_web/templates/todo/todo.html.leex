@@ -1,3 +1,12 @@
+<style>
+  .btn {
+    color: aqua;
+    background-color: black;
+    /* width: 10px; */
+    padding: 0 1rem;
+  }
+</style>
+
 <div>
   <form action="#" phx-submit="add">
     <%= text_input :todo , :title , placeholder: "whats on your mind" %> <%=
@@ -7,12 +16,35 @@
 
 <div>
   <%= for todo <- @todos do %>
-
-  <div>
-    <%= checkbox(:todo, :done, phx_click: "toggle", phx_value_id: todo.id,
-    value: todo.done) %> <%= todo.title %>
-
-
-  </div>
+  <table>
+    <thead>
+      <tr>
+        ref
+      </tr>
+      <tr>
+        name
+      </tr>
+      <tr>
+        status
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <%= checkbox(:todo, :done, phx_click: "toggle", phx_value_id: todo.id,
+          value: todo.done) %>
+          
+        </td><td>
+          <%= todo.title %> 
+        </td>
+        <td></td>
+          <%= submit "delete" , class:
+          "btn btn-primary", phx_click: "delete", phx_value_id: todo.id %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
   <%= end %>
+
+  <div></div>
 </div>
